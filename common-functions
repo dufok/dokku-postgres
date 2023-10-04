@@ -724,7 +724,7 @@ service_parse_args() {
       "--root-password") set -- "$@" "-r" ;;
       "--shm-size") set -- "$@" "-s" ;;
       "--user") set -- "$@" "-u" ;;
-      "--cpuset-cpu="*) set -- "$@" "-x" ;;
+      "--cpuset-cpus="*) set -- "$@" "-x" ;;
       *) set -- "$@" "$arg" ;;
     esac
   done
