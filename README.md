@@ -69,7 +69,7 @@ flags:
 
 - `-c|--config-options "--args --go=here"`: extra arguments to pass to the container create command (default: `None`)
 - `-C|--custom-env "USER=alpha;HOST=beta"`: semi-colon delimited environment variables to start the service with
-- `-csc|--cpuset-cpu CPUSET_CPU`: specify the CPUs in which to allow execution (0-3, 0,1)
+- `-x|--cpuset-cpu CPUSET_CPU`: specify the CPUs in which to allow execution (0-3, 0,1)
 - `-i|--image IMAGE`: the image name to start the service with
 - `-I|--image-version IMAGE_VERSION`: the image version to start the service with
 - `-m|--memory MEMORY`: container memory limit in megabytes (default: unlimited)

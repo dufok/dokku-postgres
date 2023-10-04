@@ -724,13 +724,13 @@ service_parse_args() {
       "--root-password") set -- "$@" "-r" ;;
       "--shm-size") set -- "$@" "-s" ;;
       "--user") set -- "$@" "-u" ;;
-      "--cpuset-cpu") set -- "$@" "-csc" ;;
+      "--cpuset-cpu="*) set -- "$@" "-x" ;;
       *) set -- "$@" "$arg" ;;
     esac
   done
 
   OPTIND=1
-  while getopts "na:c:C:d:i:I:m:n:N:p:P:q:R:r:s:S:u:" opt; do
+  while getopts "na:c:C:d:i:I:m:n:N:p:P:q:R:r:s:S:u:x:" opt; do
     case "$opt" in
       a)
         SERVICE_ALIAS="${OPTARG^^}"
@@ -784,7 +784,7 @@ service_parse_args() {
       u)
         export SERVICE_USER=$OPTARG
         ;;
-      csc)
+      x)
         export PLUGIN_SERVICE_CPUS=$OPTARG
         ;;
     esac
