@@ -88,6 +88,7 @@ service_create_container() {
   DOCKER_ARGS+=("--name=$SERVICE_NAME")
   DOCKER_ARGS+=("--restart=always")
   DOCKER_ARGS+=("--volume=$SERVICE_HOST_ROOT/data:/var/lib/postgresql/data")
+  DOCKER_ARGS+=("--cpuset-cpus=$PLUGIN_SERVICE_CPUS")
 
   declare -a LINK_CONTAINER_DOCKER_ARGS
   LINK_CONTAINER_DOCKER_ARGS=()
